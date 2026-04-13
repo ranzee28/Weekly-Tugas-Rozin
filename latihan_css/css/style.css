@@ -1,0 +1,109 @@
+/* 1.TYPOGRAPHY */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+
+    color: #333333;
+    line-height: 1.6;
+
+    /* Batas lebar konten menjad "kartu" di tengah layar */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+
+    /* Area konten warna putih sudut melengkung */
+    background-color: #f4f6f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+}
+
+/* 2.NAVBAR (saya ingin buat terlihat modern clean) */
+table:first-of-type {
+    width: 100%;
+    border-collapse: collapse; /* Menggabungkan border agar tidak dobel */
+    margin-bottom: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+table:first-of-type td {
+    border: 1px solid #dee2e6; /* Garis pada tabel */
+    text-align: center;
+    padding: 8px;
+}
+table:first-of-type a {
+    display: block;
+    text-decoration: none;
+    color: #495057;
+    font-weight: 700;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease; /* Efek animasi transisi yang halus */
+}
+/* Efek ketika kursor mouse diarahkan ke menu */
+table:first-of-type a:hover {
+    background-color: #3b82f6; /* Background berubah warna */
+    color: #ffffff; /* Warna tulisan berubah */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px); /* Animasi sedikit naik */
+    transition: all 0.3s ease;
+}
+
+/* 3.HEADING & GARIS PEMBATAS */
+h1, h3 {
+    color: #102951; /* Warna biru sangat gelap untuk judul */
+    margin-top: 0;
+}
+hr {
+    border: none;
+    height: 2px;
+    background-color: #e2e8f0; /* Garis abu samar */
+    margin-bottom: 20px;
+}
+
+/* 4.TABEL DATA (selain tabel navbar) */
+table:not(:first-of-type) {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+table:not(:first-of-type) td, 
+table:not(:first-of-type) th {
+    border: 1px solid #dee2e6; /* Garis pada tabel */
+    padding: 8px; /* Padding lebih besar untuk data */
+    text-align: center;
+}
+table:not(:first-of-type) th {
+    background-color: #3b82f6;
+    color: #ffffff;
+    font-weight: 700;
+}
+/* Efek Zebra: Memberi warna latar berbeda pada baris genap agar data tidak membingungkan */
+table:not(:first-of-type) tr:nth-child(even) {
+    background-color: #f8f9fa; /* Baris genap warna abu samar */
+}
+/* Efek Mouse */
+table:not(:first-of-type) tr:hover {
+    background-color: #e3f2fd; /* Efek ketika kursor mouse diarahkan ke baris */
+    transition: all 0.3s ease;
+}
+
+/* 5.ESTETIKA FOTO */
+img {
+    border-radius: 50%; /* foto kotak menjadi lingkaran */ 
+    object-fit: cover; /* rasio foto tidak gepeng */
+    border: 2px solid #e2e8f0; /* garis pada foto */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* bayangan foto */
+}
+
+
+
+
+
