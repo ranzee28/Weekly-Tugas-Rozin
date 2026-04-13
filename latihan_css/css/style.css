@@ -103,7 +103,35 @@ img {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* bayangan foto */
 }
 
-
-
+/* 6.ICON KONTAK */
+.follow-card {
+    background-color: #1a1a1a;
+    padding: 25px 30px;
+    border-radius: 12px; /* Membuat sudut kotak melengkung */
+    display: inline-block; /* Agar lebar kotak menyesuaikan isinya */
+    margin-top: 10px;
+}
+.follow-title {
+    color: #ffffff;
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+.social-icons-dark {
+    display: flex;
+    gap: 10px; /* Jarak antar ikon */
+}
+.social-icons-dark a {
+    color: #9ca3af;
+    font-size: 25px;
+    transition: all 0.3s ease;
+}
+/* Efek menyala saat ikon disentuh kursor */
+.social-icons-dark a:hover {
+    transform: translateY(-2px); /* Efek melompat sedikit */
+}
+.social-icons-dark a:hover .fa-linkedin { color: #0a66c2; }    /* Biru LinkedIn */
+.social-icons-dark a:hover .fa-instagram { color: #e1306c; }   /* Merah Instagram */
 
 
