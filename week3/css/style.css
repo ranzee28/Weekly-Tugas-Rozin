@@ -238,3 +238,67 @@ input[type="number"]:focus {
     width: 150px;
     color: #475569;
 }
+
+/* 9. FORM LATIHAN1 */
+/* Input, textarea, dan select seragam */
+input[type="text"], 
+input[type="password"], 
+input[type="email"], 
+input[type="tel"], 
+input[type="url"], 
+input[type="date"], 
+input[type="number"], 
+input[type="color"],
+input[type="range"],
+select, 
+textarea {
+    width: 100%; /* Membuat semua input memenuhi kolom */
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    outline: none;
+    box-sizing: border-box;
+}
+/* Radio dan Checkbox */
+input[type="radio"], 
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+    cursor: pointer;
+}
+/* Wadah Radio & Checkbox */
+.input-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 5px 0;
+}
+.input-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #475569;
+}
+.form-container table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.form-container td {
+    border: none !important;
+    padding: 12px 5px;
+    vertical-align: middle;
+}
+.form-container td:first-child {
+    width: 150px;
+    font-weight: 600;
+    color: #334155;
+}
+.form-container td:nth-child(2) {
+    width: 20px;
+    text-align: center;
+    color: #94a3b8;
+}
