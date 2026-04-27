@@ -67,6 +67,7 @@ hr {
 /* 4.TABEL DATA (selain tabel navbar) */
 table:not(:first-of-type) {
     width: 100%;
+    /* Agar border-radius muncul */
     border-collapse: collapse;
     margin-bottom: 20px;
     background-color: #ffffff;
@@ -84,6 +85,7 @@ table:not(:first-of-type) th {
     background-color: #3b82f6;
     color: #ffffff;
     font-weight: 700;
+    border-top: none; /* Bersihkan border atas header */
 }
 /* Efek Zebra: Memberi warna latar berbeda pada baris genap agar data tidak membingungkan */
 table:not(:first-of-type) tr:nth-child(even) {
@@ -134,4 +136,105 @@ img {
 .social-icons-dark a:hover .fa-linkedin { color: #0a66c2; }    /* Biru LinkedIn */
 .social-icons-dark a:hover .fa-instagram { color: #e1306c; }   /* Merah Instagram */
 
+/* 7. STYLE TOMBOL */
+/* Untuk semua tombol (agar ukurannya sama) */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+/* Tombol Tambah Data (Hijau) */
+.btn-tambah {
+    background-color: #10b981;
+    color: white;
+    box-shadow: 0 2px 5px rgba(16, 185, 129, 0.2);
+}
+.btn-tambah:hover {
+    background-color: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+/* Tombol Latihan (Abu) */
+.btn-latihan {
+    background-color: #94a3b8;
+    color: white;
+    box-shadow: 0 2px 5px rgba(148, 163, 184, 0.2);
+}
+.btn-latihan:hover {
+    background-color: #64748b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(148, 163, 184, 0.3);
+}
+/* Tombol Kembali (Biru) */
+.btn-kembali {
+    background-color: #f63b3b;
+    color: white;
+    box-shadow: 0 2px 5px rgba(59, 130, 246, 0.2);
+}
+.btn-kembali:hover {
+    background-color: #e42c2c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+/* Tombol Kirim Data (Ungu) */
+.btn-kirim {
+    background-color: #10b981;
+    color: white;
+    box-shadow: 0 2px 5px rgba(139, 92, 246, 0.2);
+}
+.btn-kirim:hover {
+    background-color: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
 
+/* 9. FORM INPUT DATA */
+.form-container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+}
+.form-container h2 {
+    margin-bottom: 20px;
+    color: #1e293b;
+}
+/* Input Text & Number */
+input[type="text"], 
+input[type="number"],
+input[type="file"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    outline: none;
+    box-sizing: border-box; /* Agar padding tidak merusak lebar */
+}
+/* Efek saat kolom input diklik (Fokus) */
+input[type="text"]:focus, 
+input[type="number"]:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+/* Area input agar lebih clean */
+.form-container table {
+    border: none;
+    box-shadow: none;
+}
+.form-container td {
+    border: none !important;
+    padding: 10px 5px;
+}
+/* Mengatur kolom label agar lebih rapi */
+.form-container td:first-child {
+    font-weight: 600;
+    width: 150px;
+    color: #475569;
+}
