@@ -13,10 +13,10 @@
 <body>
     <table border="1" cellspacing="0" cellpadding="8">
         <tr>
-            <td><a href="index.html">Beranda</a></td>
-            <td><a href="profile.html">Profil</a></td>
-            <td><a href="contacts.html">Kontak</a></td>
-            <td><a href="data_mahasiswa.html">Data Mahasiswa</a></td>
+            <td><a href="index.php">Beranda</a></td>
+            <td><a href="profile.php">Profil</a></td>
+            <td><a href="contacts.php">Kontak</a></td>
+            <td><a href="data_mahasiswa.php">Data Mahasiswa</a></td>
         </tr>
     </table>
     <hr>

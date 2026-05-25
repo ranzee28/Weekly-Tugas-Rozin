@@ -9,9 +9,9 @@ Repository ini berisi kumpulan tugas mingguan mata kuliah **Pemrograman Web**.
 
 ## Struktur Repository
 ### Week 1
-- index.html → Halaman utama
-- profile.html → Halaman profil
-- contacts.html → Halaman kontak
+- index.php → Halaman utama
+- profile.php → Halaman profil
+- contacts.php → Halaman kontak
 
 *(Week berikutnya akan ditambahkan sesuai perkembangan tugas)*
 

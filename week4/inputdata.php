@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <a href="data_mahasiswa.html">
+    <a href="data_mahasiswa.php">
         <button class="btn-kembali">Kembali</button>
     </a>
     <h2>Input Data Mahasiswa</h1>

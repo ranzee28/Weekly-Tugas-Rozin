@@ -13,10 +13,10 @@
 <body>
     <table border="1" cellspacing="0" cellpadding="8">
         <tr>
-            <td><a href="index.html">Beranda</a></td>
-            <td><a href="profile.html">Profil</a></td>
-            <td><a href="contacts.html">Kontak</a></td>
-            <td><a href="data_mahasiswa.html">Data Mahasiswa</a></td>
+            <td><a href="index.php">Beranda</a></td>
+            <td><a href="profile.php">Profil</a></td>
+            <td><a href="contacts.php">Kontak</a></td>
+            <td><a href="data_mahasiswa.php">Data Mahasiswa</a></td>
         </tr>
     </table>
     <hr>
@@ -24,12 +24,12 @@
     <h1>
         DATA MAHASISWA
     </h1>
-    <a href="inputdata.html">
+    <a href="inputdata.php">
         <button class="btn-tambah">Tambah Data</button>
     </a>
     <br>
     <br>
-    <a href="latihan1.html">
+    <a href="latihan1.php">
         <button class="btn-latihan">Latihan</button>
     </a>
     <h3>
