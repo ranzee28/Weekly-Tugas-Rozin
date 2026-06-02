@@ -1,27 +1,24 @@
 <?php
-    // Koneksi ke database cobaweekly
+    // Koneksi ke database
     $koneksi = mysqli_connect("localhost", "root", "", "cobaweekly");
 
-    // Cek koneksi untuk memastikan tidak ada error
     if (!$koneksi) {
         die("Koneksi Gagal: " . mysqli_connect_error());
     }
     
-    // Ambil data dari tabel mahasiswa
+    // Ambil data
     $query = "SELECT * FROM mahasiswa";
     $result = mysqli_query($koneksi, $query);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Mahasiswa - Biodata</title>
+    <title>Data Mahasiswa</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
     <table border="1" cellspacing="0" cellpadding="8">
         <tr>
@@ -38,11 +35,6 @@
         <button class="btn-tambah">Tambah Data</button>
     </a>
     <br><br>
-    <a href="latihan1.php">
-        <button class="btn-latihan">Latihan</button>
-    </a>
-    
-    <h3>Berikut adalah data mahasiswa Informatika Universitas Muhammadiyah Semarang:</h3>
     
     <table border="1" cellspacing="0" cellpadding="8">
         <thead>
@@ -54,12 +46,12 @@
                 <th>Email</th>
                 <th>No HP</th>
                 <th>Foto</th>
+                <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
             <?php 
-            $no = 1; // Variabel penomoran baris tabel
-            // Melakukan looping untuk mengambil semua baris data dari database
+            $no = 1;
             while ($row = mysqli_fetch_assoc($result)) : 
             ?>
             <tr>
@@ -71,41 +63,19 @@
                 <td><?= $row['no_hp']; ?></td>
                 <td align="center">
                     <?php if (!empty($row['foto'])) : ?>
-                        <img src="images/<?= $row['foto']; ?>" alt="Foto <?= $row['nama']; ?>" width="100" height="100" style="object-fit: cover;">
+                        <img src="images/<?= $row['foto']; ?>" width="100" height="100" style="object-fit: cover;">
                     <?php else : ?>
                         <p style="font-size: 12px; color: gray;">Tidak ada foto</p>
                     <?php endif; ?>
+                </td>
+                <td align="center">
+                    <a href="editdata.php?id=<?= $row['id']; ?>" style="text-decoration: none;"><button style="background-color: #007bff; color: white; cursor: pointer; border: none; padding: 5px 10px; margin-right: 5px; border-radius: 4px;">Edit</button>
+                    </a>
+                    <a href="hapusdata.php?id=<?= $row['id']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');" style="text-decoration: none;"><button style="background-color: red; color: white; cursor: pointer; border: none; padding: 5px 10px; border-radius: 4px;">Hapus</button></a>
                 </td>
             </tr>
             <?php endwhile; ?>
         </tbody>
     </table>
-    <br>
-
-    <h3>Latihan Layout</h3>
-    <table border="1" cellspacing="0" cellpadding="8">
-        <tr>
-            <td>1.1</td>
-            <td>1.2</td>
-            <td>1.3</td>
-            <td>1.4</td>
-        </tr>
-        <tr>
-            <td>2.1</td>
-            <td colspan="2" rowspan="2" align="center">?</td>
-            <td>2.4</td>
-        </tr>
-        <tr>
-            <td>3.1</td>
-            <td>3.4</td>
-        </tr>
-        <tr>
-            <td>4.1</td>
-            <td>4.2</td>
-            <td>4.3</td>
-            <td>4.4</td>
-        </tr>
-    </table>
 </body>
-
 </html>
