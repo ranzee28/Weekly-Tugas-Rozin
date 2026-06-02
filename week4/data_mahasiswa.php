@@ -1,12 +1,24 @@
+<?php
+    // Koneksi ke database cobaweekly
+    $koneksi = mysqli_connect("localhost", "root", "", "cobaweekly");
+
+    // Cek koneksi untuk memastikan tidak ada error
+    if (!$koneksi) {
+        die("Koneksi Gagal: " . mysqli_connect_error());
+    }
+    
+    // Ambil data dari tabel mahasiswa
+    $query = "SELECT * FROM mahasiswa";
+    $result = mysqli_query($koneksi, $query);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        Data Mahasiswa - Biodata
-    </title>
+    <title>Data Mahasiswa - Biodata</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -21,79 +33,56 @@
     </table>
     <hr>
 
-    <h1>
-        DATA MAHASISWA
-    </h1>
+    <h1>DATA MAHASISWA</h1>
     <a href="inputdata.php">
         <button class="btn-tambah">Tambah Data</button>
     </a>
-    <br>
-    <br>
+    <br><br>
     <a href="latihan1.php">
         <button class="btn-latihan">Latihan</button>
     </a>
-    <h3>
-        Berikut adalah data mahasiswa Informatika'24 Universitas Muhammadiyah Semarang:
-    </h3>
+    
+    <h3>Berikut adalah data mahasiswa Informatika Universitas Muhammadiyah Semarang:</h3>
+    
     <table border="1" cellspacing="0" cellpadding="8">
-        <tr>
-            <th rowspan="2">No</th>
-            <th rowspan="2">Nama</th>
-            <th rowspan="2">NIM</th>
-            <th rowspan="2">Kelas</th>
-            <th rowspan="2">Prodi</th>
-            <th colspan="3">Nilai</th>
-            <th rowspan="2">Foto</th>
-        </tr>
-        <tr>
-            <th>UTS</th>
-            <th>UAS</th>
-            <th>Tugas</th>
-        </tr>
-        <!-- Mahasiswa 1 -->
-        <tr>
-            <td>1</td>
-            <td>Ahmad Rozin R</td>
-            <td>13182420102</td>
-            <td>Reg-C</td>
-            <td>S1 Informatika</td>
-            <td>86</td>
-            <td>85</td>
-            <td>88</td>
-            <td><img src="asset/images/foto_me.jpg" alt="" width="100" height="100"></td>
-        </tr>
-        <!-- Mahasiswa 2 -->
-        <tr>
-            <td>2</td>
-            <td>Iko Hilmy H</td>
-            <td>13182420118</td>
-            <td>Reg-C</td>
-            <td>S1 Informatika</td>
-            <td>82</td>
-            <td>85</td>
-            <td>80</td>
-            <td><img src="https://tse1.mm.bing.net/th/id/OIP.cupeJDN6fXU_yD9XT7Y6RQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="" width="100" height="100"></td>
-
-        </tr>
-        <!-- Mahasiswa 3 -->
-        <tr>
-            <td>3</td>
-            <td>Reysa Arjun FA</td>
-            <td>13182420098</td>
-            <td>Reg-C</td>
-            <td>S1 Informatika</td>
-            <td>85</td>
-            <td>80</td>
-            <td>82</td>
-            <td><img src="" alt="" width="100" height="100"></td>
-        </tr>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>NIM</th>
+                <th>Jurusan</th>
+                <th>Email</th>
+                <th>No HP</th>
+                <th>Foto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php 
+            $no = 1; // Variabel penomoran baris tabel
+            // Melakukan looping untuk mengambil semua baris data dari database
+            while ($row = mysqli_fetch_assoc($result)) : 
+            ?>
+            <tr>
+                <td><?= $no++; ?></td>
+                <td><?= $row['nama']; ?></td>
+                <td><?= $row['nim']; ?></td>
+                <td><?= $row['jurusan']; ?></td>
+                <td><?= $row['email']; ?></td>
+                <td><?= $row['no_hp']; ?></td>
+                <td align="center">
+                    <?php if (!empty($row['foto'])) : ?>
+                        <img src="images/<?= $row['foto']; ?>" alt="Foto <?= $row['nama']; ?>" width="100" height="100" style="object-fit: cover;">
+                    <?php else : ?>
+                        <p style="font-size: 12px; color: gray;">Tidak ada foto</p>
+                    <?php endif; ?>
+                </td>
+            </tr>
+            <?php endwhile; ?>
+        </tbody>
     </table>
     <br>
 
-
-    <h3>
-        Latihan        
-    </h3>
+    <h3>Latihan Layout</h3>
     <table border="1" cellspacing="0" cellpadding="8">
         <tr>
             <td>1.1</td>
