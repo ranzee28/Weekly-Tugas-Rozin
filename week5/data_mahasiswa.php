@@ -1,14 +1,9 @@
 <?php
-    // Koneksi ke database
-    $koneksi = mysqli_connect("localhost", "root", "", "cobaweekly");
+    require'fungsi.php';
+    $mahasiswa = "SELECT * FROM mahasiswa";
+    $mahasiswas = tampildata($mahasiswa);
 
-    if (!$koneksi) {
-        die("Koneksi Gagal: " . mysqli_connect_error());
-    }
-    
-    // Ambil data
-    $query = "SELECT * FROM mahasiswa";
-    $result = mysqli_query($koneksi, $query);
+    tampildata($mahasiswa); // Mengambil data dalam wadah 
 ?>
 
 <!DOCTYPE html>
@@ -52,30 +47,30 @@
         <tbody>
             <?php 
             $no = 1;
-            while ($row = mysqli_fetch_assoc($result)) : 
+            foreach($mahasiswas as $mhs){ // Looping data mahasiswa
             ?>
             <tr>
                 <td><?= $no++; ?></td>
-                <td><?= $row['nama']; ?></td>
-                <td><?= $row['nim']; ?></td>
-                <td><?= $row['jurusan']; ?></td>
-                <td><?= $row['email']; ?></td>
-                <td><?= $row['no_hp']; ?></td>
+                <td><?= $mhs['nama']; ?></td>
+                <td><?= $mhs['nim']; ?></td>
+                <td><?= $mhs['jurusan']; ?></td>
+                <td><?= $mhs['email']; ?></td>
+                <td><?= $mhs['no_hp']; ?></td>
                 <td align="center">
-                    <?php if (!empty($row['foto'])) : ?>
-                        <img src="images/<?= $row['foto']; ?>" width="100" height="100" style="object-fit: cover;">
+                    <?php if (!empty($mhs['foto'])) : ?>
+                        <img src="images/<?= $mhs['foto']; ?>" width="100" height="100" style="object-fit: cover;">
                     <?php else : ?>
                         <p style="font-size: 12px; color: gray;">Tidak ada foto</p>
                     <?php endif; ?>
                 </td>
                 <td align="center">
-                    <a href="editdata.php?id=<?= $row['id']; ?>" style="text-decoration: none;"><button style="background-color: #007bff; color: white; cursor: pointer; border: none; padding: 5px 10px; margin-right: 5px; border-radius: 4px;">Edit</button>
+                    <a href="editdata.php?id=<?= $mhs['id']; ?>" style="text-decoration: none;"><button style="background-color: #007bff; color: white; cursor: pointer; border: none; padding: 5px 10px; margin-right: 5px; border-radius: 4px;">Edit</button>
                     </a>
-                    <a href="hapusdata.php?id=<?= $row['id']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');" style="text-decoration: none;"><button style="background-color: red; color: white; cursor: pointer; border: none; padding: 5px 10px; border-radius: 4px;">Hapus</button></a>
+                    <a href="hapusdata.php?id=<?= $mhs['id']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');" style="text-decoration: none;"><button style="background-color: red; color: white; cursor: pointer; border: none; padding: 5px 10px; border-radius: 4px;">Hapus</button></a>
                 </td>
             </tr>
-            <?php endwhile; ?>
-        </tbody>
+            <?php } ?>
+      </tbody>
     </table>
 </body>
 </html>
