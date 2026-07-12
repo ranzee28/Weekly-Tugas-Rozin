@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['login'])) {
+    header("Location: login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +25,7 @@
             <td><a href="profile.php">Profil</a></td>
             <td><a href="contacts.php">Kontak</a></td>
             <td><a href="data_mahasiswa.php">Data Mahasiswa</a></td>
+            <td><a href="logout.php" onclick="return confirm('Apakah Anda yakin ingin logout?');" style="color: #f63b3b;">Logout</a></td>
         </tr>
     </table>
     <hr>

@@ -1,4 +1,10 @@
 <?php
+    session_start();
+    if (!isset($_SESSION['login'])) {
+        header("Location: login.php");
+        exit;
+    }
+
     require'fungsi.php';
 
     // Cek apakah tombol Kirim Data sudah ditekan

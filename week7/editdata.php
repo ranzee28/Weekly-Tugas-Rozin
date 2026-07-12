@@ -1,4 +1,10 @@
 <?php
+    session_start();
+    if (!isset($_SESSION['login'])) {
+        header("Location: login.php");
+        exit;
+    }
+
     // 1. Koneksi ke database
     $koneksi = mysqli_connect("localhost", "root", "", "cobaweekly");
 
